@@ -1,0 +1,83 @@
+#nav {
+  position:absolute;
+  top:10px;
+  right:30px;
+}
+#nav li {
+  display:inline;
+  margin-right:4px;
+  border:thin inset #333333
+}
+.navbar {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: smaller;
+	text-decoration: none;
+  padding:3px;
+}
+a.navbar {
+	text-decoration: none;
+	color: #003300;
+}
+a.navbar:hover {
+	color: #660000;
+	
+}
+a.navbar:visited {
+	color: #000033;
+
+}
+.hrecipe { border: 1px inset #CCCCCC; 
+}
+.hrecipe ul, ul.ingredients {
+	list-style-type: none;
+	margin-left: 1in;
+}
+.hrecipe h3, h3.ingredients {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-left: 1in;
+}
+.summary, .intro {
+	font-family:Calibri, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	text-align: justify;
+	margin-right: 1in;
+	margin-left: 1in;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+  padding: 6px 0;
+}
+.instructions, .directions {
+	list-style-type: none;
+	font-size: larger;
+	font-weight: 100;
+	margin-left: 0.5in;
+}
+p.notes {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: smaller;
+	margin: 0.25in 0.5in 0.1in;
+}
+li.notes {
+  color: #800000; font-weight: bold;
+}
+
+h1 {
+	margin: .5in;
+	font-size: xx-large;
+	font-family:Cambria, Georgia, "Times New Roman", Times, serif;
+}
+p.microformat-notice {
+  font-size: 12px;
+  line-height:15px;
+  font-family:Calibri, Arial, Helvetica, sans-serif;
+  text-align:center;
+}
+img { border:none; }
+.microformat-notice img { vertical-align:text-top; }
