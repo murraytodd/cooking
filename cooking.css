@@ -1,83 +1,175 @@
+/* Basic Setup */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem 2rem;
+  color: #333;
+}
+
+/* Navigation */
+body > header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
 #nav {
-  position:absolute;
-  top:10px;
-  right:30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 #nav li {
-  display:inline;
-  margin-right:4px;
-  border:thin inset #333333
+  display: inline-block;
+  margin-left: 0.5rem;
 }
+
 .navbar {
 	font-family: Geneva, Arial, Helvetica, sans-serif;
 	font-size: smaller;
 	text-decoration: none;
-  padding:3px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
 a.navbar {
 	text-decoration: none;
 	color: #003300;
 }
+
 a.navbar:hover {
 	color: #660000;
-	
+	background-color: #f0f0f0;
 }
+
 a.navbar:visited {
 	color: #000033;
+}
 
+/* Main Content Article */
+main {
+  max-width: 800px;
+  margin: 0 auto;
 }
-.hrecipe { border: 1px inset #CCCCCC; 
-}
-.hrecipe ul, ul.ingredients {
-	list-style-type: none;
-	margin-left: 1in;
-}
-.hrecipe h3, h3.ingredients {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: large;
-	font-weight: bold;
-	text-decoration: underline;
-	margin-left: 1in;
-}
-.summary, .intro {
-	font-family:Calibri, Arial, Helvetica, sans-serif;
-	font-style: italic;
-	text-align: justify;
-	margin-right: 1in;
-	margin-left: 1in;
-	border-top-width: 1px;
-	border-right-width: 0px;
-	border-bottom-width: 1px;
-	border-left-width: 0px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-  padding: 6px 0;
-}
-.instructions, .directions {
-	list-style-type: none;
-	font-size: larger;
-	font-weight: 100;
-	margin-left: 0.5in;
-}
-p.notes {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: smaller;
-	margin: 0.25in 0.5in 0.1in;
-}
-li.notes {
-  color: #800000; font-weight: bold;
+
+article.hrecipe,
+article.recipe-index {
+  border: 1px solid #ddd;
+  padding: 1rem 2rem 2rem;
+  border-radius: 8px;
 }
 
 h1 {
-	margin: .5in;
-	font-size: xx-large;
+	margin: 1rem 0;
+	font-size: 2.5rem;
 	font-family:Cambria, Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  line-height: 1.2;
 }
-p.microformat-notice {
-  font-size: 12px;
-  line-height:15px;
-  font-family:Calibri, Arial, Helvetica, sans-serif;
-  text-align:center;
+
+p.subtitle {
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #555;
 }
+
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.75rem;
+	font-weight: bold;
+	border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+.summary {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	text-align: justify;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  margin: 1.5rem 0;
+}
+
+section.ingredients ul {
+	list-style-type: disc;
+	padding-left: 2rem;
+}
+
+section.instructions ol {
+	list-style-type: decimal;
+	padding-left: 2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+section.instructions ol li {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-list ol {
+	padding-left: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.recipe-list ol li {
+  margin-bottom: 0.5rem;
+}
+
+section.notes p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.9rem;
+	margin: 1rem 0;
+  background-color: #f8f8f8;
+  border-left: 4px solid #ccc;
+  padding: 1rem;
+}
+
+/* Images and Figures */
+figure {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 img { border:none; }
-.microformat-notice img { vertical-align:text-top; }
+
+/* AI Notes */
+.ai-notes {
+  display: none;
+  border: 2px dashed #ff6666;
+  padding: 15px;
+  background-color: #fff5f5;
+  margin-top: 2rem;
+}
+
+/* "Before We Cook" Educational Section */
+.before-we-cook {
+  background-color: #f0f8ff; /* AliceBlue */
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.before-we-cook h2 {
+  border-bottom: none;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.footnote {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}

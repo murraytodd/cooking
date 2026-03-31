@@ -33,13 +33,15 @@ Migrating 11 hand-encoded XHTML recipe pages to modern HTML5 with structured dat
   - Abstract
   - Description or Commentary (This section may be completely omitted if there's no original content)
   - Ingredients
-  - Instruction pre-text (an optional paragraph or two about important considerations, watch-outs, hints, etc.) THIS SECTION MAY BE OMITTED IF THERE'S NOTHING THAT REALLY CAN'T FIT INTO THE STEP-BY-STEP INSTRUCTIONS.
+  - "Before we cook" (an optional paragraph or two about important considerations, watch-outs, hints, etc.) THIS SECTION MAY BE OMITTED IF THERE'S NOTHING THAT REALLY CAN'T FIT INTO THE STEP-BY-STEP INSTRUCTIONS.
   - Step-by-step instructions (enumerated cooking instructions, which may include some duplication or notes tying to the previous section)
-  - Notes (optional) If there are any additional notes that really can't fit into the instruction pre-text or the Description/Commentary sections, put them here.
+  - Notes (optional) If there are any additional notes that qualify as a quick "side-bar comment" rather than an important cooking consideration.
   - AI Notes: create a section at the very bottom where you can put anything I should review. This section will be wrapped in `<div class="ai-notes">...</div>`. The global `cooking.css` file will contain a rule (`.ai-notes { display: none; }`) to hide these notes by default. You can make them visible for review by temporarily changing this style in your browser's developer tools.
 - **Formatting:** - Use "tbsp" for tablespoon and "tsp" for teaspoon.
   - Ingredients should be listed in the order they are used in the instructions.
+  - Units should be consistent. There shouldn't be decimal (e.g. 1.5 tbsp) measurements next to fractional (e.g. 1 1/2 cups) measurements.
   - Sections do not need titles, with the exception of "Ingredients" and "Instructions" (or a similar heading like "Method"), which should have `<h2>` headings.
+  - For readability of the code, wrap paragraph text at 120 columns.
 - **Validation:** 
   - Flag any recipes where an ingredient is listed but never mentioned in the "Method" section. Also check to see if any critical information appears to be missing. (For example, oven temperature.) If missing, do some research to add the missing information but tag that addition with a written note that this was adadd by the editorial AI and needs to be validated.
   - Check to see if there are any cross-reference links that should be added. For example, the Krab Souffle is a special application of the basic souffle recipe, so they should be aware of each other.
