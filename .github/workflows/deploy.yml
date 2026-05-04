@@ -1,23 +1,22 @@
 name: Deployment Workflow
-
 on:
   push:
-    branches: [ main ] # This triggers the action whenever you push to main
+    branches: [ main ]
 
 jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Fixes the Node.js 20 warning
 
       - name: Update modification date
         run: |
-          export CURRENT_DATE=$(date +'%m/%d/%Y')
-          # This updates index.html AND any other html files in your directory
-          sed -i "s/{{LAST_MODIFIED}}/$CURRENT_DATE/g" *.html
+          # Use find to safely execute sed on all HTML files
+          # This prevents "file not found" errors if the wildcard fails
+          CURRENT_DATE=$(date +'%m/%d/%Y')
+          find . -maxdepth 1 -name "*.html" -exec sed -i "s/{{LAST_MODIFIED}}/$CURRENT_DATE/g" {} +
 
-      # This is where your specific code block goes:
       - name: Deploy to website
         uses: easingthemes/ssh-deploy@main
         with:
