@@ -15,7 +15,8 @@ jobs:
           # Use find to safely execute sed on all HTML files
           # This prevents "file not found" errors if the wildcard fails
           CURRENT_DATE=$(date +'%m/%d/%Y')
-          find . -maxdepth 1 -name "*.html" -exec sed -i "s/{{LAST_MODIFIED}}/$CURRENT_DATE/g" {} +
+          # Using | instead of / as the delimiter
+          find . -maxdepth 1 -name "*.html" -exec sed -i "s|{{LAST_MODIFIED}}|$CURRENT_DATE|g" {} +
 
       - name: Deploy to website
         uses: easingthemes/ssh-deploy@main
