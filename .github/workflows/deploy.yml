@@ -11,6 +11,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Update modification date
+        run: |
+          export CURRENT_DATE=$(date +'%m/%d/%Y')
+          # This updates index.html AND any other html files in your directory
+          sed -i "s/{{LAST_MODIFIED}}/$CURRENT_DATE/g" *.html
+
       # This is where your specific code block goes:
       - name: Deploy to website
         uses: easingthemes/ssh-deploy@main
@@ -20,8 +26,3 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-
-      - name: Update modification date
-        run: |
-            export CURRENT_DATE=$(date +'%m/%d/%Y')
-            sed -i "s/{{LAST_MODIFIED}}/$CURRENT_DATE/g" index.html
